@@ -1,9 +1,9 @@
-@charaset "UTF-8";
+
 /*画面スタイル***/
 
 .body {
     font-size: 16px;
-    font-family: 'Noto Sans JP', sans-serif;
+    font-family: "MS 明朝","MS P明朝","游明朝",sans-serif,serif;
 }
 
 /*ヘッダー***/
@@ -14,17 +14,21 @@
 }
 .headerlogo {
     font-size: 0.5rem;
+    font-family: "MS 明朝"
 }
 .headerlogo h1 {
-    font-size: 30px;
+    font-size: 25px;
     background-color: #807e7e;
     color: #fbfbfb;
+    font-family: "游明朝";
 }
 .menutittle {
     margin-left: auto;
     display: flex;
     flex: none;
     align-items: center;
+    font-family: 游明朝;
+
 }
 .menutittle .tittle {
     color: #000;
@@ -33,8 +37,49 @@
     margin-left: 60px;
 }
 /*メイン***/
-.main {}
-.main .top {}
-.main .top img {
-    max-width: 120%;
+.main {
+    text-align: center;
+    margin: 0 60px 0;
+}
+
+/*画像と文字重っている個所***/
+.t .top {
+    position: relative;
+}
+
+.t .top img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+}
+
+.t .top h2 {
+    font-size: 5rem;
+    position: absolute;
+    top: 27%;
+    left: 21%;
+    font-family: "游明朝";
+    color: firebrick;
+}
+
+/***お知らせ****/
+.news {}
+
+.main h3 {
+    font-size: 2.5rem;
+    font-family: "游明朝";
+    margin: 50px 0 50px;
+}
+
+/**アクセス***/
+.acces {}
+.acces iframe {
+    width: 70%;
+}
+.syousai {
+    margin-top: 50px;
+    text-align: left;
+    margin-left: 110px;
+    font-size: 1.2rem;
+    margin-bottom: 150px;
 }
