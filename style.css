@@ -4,6 +4,7 @@
 .body {
     font-size: 16px;
     font-family: "MS 明朝","MS P明朝","游明朝",sans-serif,serif;
+
 }
 
 /*ヘッダー***/
@@ -78,8 +79,115 @@
 }
 .syousai {
     margin-top: 50px;
-    text-align: left;
-    margin-left: 110px;
+    text-align: center;
+    margin-left: 15%;
+    margin-right: 15%;
     font-size: 1.2rem;
     margin-bottom: 150px;
+    padding: 8px 19px;
+    color: #2c2c2f;
+    border-top: solid 5px #0f0f0f;
+    border-bottom: solid 5px #0f0f0f;
 }
+
+/*****メニュー********/
+/***くし****/
+.menu1 {
+  
+    background-image: url("img/barbecue-gfd33e86fa_1920.jpg");
+    background-size: cover;
+}
+
+.menu1 .m {
+    text-align: right;                            /***ボックス要素を右寄せ***/
+}
+
+.menu1 .m .kusi {
+    border:  solid 1px;                             /* 枠線指定 */
+    display:  inline-block;                         /* インラインブロックにする */
+    padding: 10px 20px;                             /* 余白指定 */
+    background-color: rgba(70, 68, 68, 0.7);     /* 背景色指定 */
+}
+
+.menu1 .m .kusi .menubox {
+    text-align:  center;    /* 文字中央寄せ */
+    padding:  150px;        /* 余白指定 */
+    border: solid 2px;      /* 枠線指定 */
+}
+
+.menu1 .m .kusi .menubox p {
+    font-size: 25px;
+    font-family: "游明朝";
+    color: #fbfbfb;
+}
+
+/***一品****/
+
+.menu2 {
+    background-image: url("img/japanese-cuisine-g9a489705b_1920.jpg");
+    background-size: cover;
+}
+
+.menu2 .n {
+    text-align: left;
+}
+
+.menu2 .n .ippin {
+    border:  solid 1px;                             /* 枠線指定 */
+    display:  inline-block;                         /* インラインブロックにする */
+    padding: 10px 20px;                             /* 余白指定 */
+    background-color: rgba(70, 68, 68, 0.7);     /* 背景色指定 */
+}
+
+
+
+.menu2 .n .ippin .menubox {
+    text-align:  center;    /* 文字中央寄せ */
+    padding:  150px;        /* 余白指定 */
+    border: solid 2px;      /* 枠線指定 */
+}
+
+.menu2 .ippin .menubox p {
+    font-size: 25px;
+    font-family: "游明朝";
+    color: #fbfbfb;
+}
+
+/****ドリンク***/
+.menu3 {
+    background-image: url("img/beer-g3185ec54a_1920.jpg");
+    background-size: cover;
+}
+
+.menu3 .d {
+    text-align: right;
+}
+
+.menu3 .d .drink {
+    border:  solid 1px;                             /* 枠線指定 */
+    display:  inline-block;                         /* インラインブロックにする */
+    padding: 10px 20px;                             /* 余白指定 */
+    background-color: rgba(70, 68, 68, 0.7);     /* 背景色指定 */
+}
+
+.menu3 .d .menubox {
+    text-align:  center;    /* 文字中央寄せ */
+    padding:  150px;        /* 余白指定 */
+    border: solid 2px;      /* 枠線指定 */
+}
+
+.menu3 .d .menubox p {
+    font-size: 25px;
+    font-family: "游明朝";
+    color: #fbfbfb;
+}
+
+
+/***店舗情報***/
+
+.shop {
+    margin-top: 120px;
+}
+
+.shop .shopbox {}
+
