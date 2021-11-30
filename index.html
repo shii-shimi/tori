@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <link rel="stylesheet" href="style.css">
     <!--bootsyrap-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
@@ -17,14 +18,27 @@
             <div class="headerlogo">
                 <img src="img/rogo.jpg" alt="ロゴ">
             </div>
-                
-                <div class="menutittle">
-                    <div class="tittle"> <p><a href="#1">お知らせ</a></p></div>
-                    <div class="tittle"><p><a href="#2">アクセス</a></p></div>
-                    <div class="tittle"><p><a href="#3">メニュー</a></p></div>
-                    <div class="tittle"> <p><a href="#4">店舗情報</a></p></div>
-                    <div class="tittle"><p><a href="#5">お問い合わせ</a></p></div>
-                </div>
+
+           <!-- ハンバーガーメニュー -->
+           <div class="drawer"></div>
+                <!-- ハンバーガーメニューの表示・非表示を切り替えるチェックボックス -->
+                <input type="checkbox" name="navToggle" id="navToggle" class="nav-toggle">
+                <!-- ハンバーガーメニューのアイコン -->
+                <label for="navToggle" class="btn-burger">
+                    <span class="icon"></span>
+                </label>
+
+                <!-- 表示されるメニューの中身 -->
+                <nav class="nav">
+                    <ul class="nav-list">
+                    <li><a href="#1">お知らせ</a></li>
+                    <li><a href="#2">アクセス</a></li>
+                    <li><a href="#3">メニュー</a></li>
+                    <li><a href="#4">店舗情報</a></li>
+                    <li><a href="#5">お問い合わせ</a></li>
+                    </ul>
+                </nav>
+            </div>
         </div>
     </header>
 
@@ -101,6 +115,8 @@
         <!--menu-->
         <div class="menu">
             <h3  id="3">メニュー</h3>
+
+            <img src="img/barbecue-gfd33e86fa_1920.jpg" alt="">
 
             <!--串-->
             <div class="menu1">
