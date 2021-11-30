@@ -1,19 +1,20 @@
 
 /*画面スタイル***/
 
-.body {
+body {
     font-size: 16px;
     font-family: "MS 明朝","MS P明朝","游明朝",sans-serif,serif;
     padding-top: 90px; /* ヘッダーの後ろに要素が隠れないようにするため */
-
+    margin: 0 auto;
+    width: 100%;
 }
 
 /*ヘッダー***/
 header {
     width: 100%;       /* 幅いっぱいを指定 */
     height: 110px;      /* 高さを50pxに指定 */
-    background: rgb(252, 252, 252);     /* 背景色を指定 */
-    padding: 20px 50px;         /* ヘッダーに上下左右それぞれ余白を指定 */
+    background:white ;    /* 背景色を指定 */
+    padding: 20px 0;         /* ヘッダーに上下左右それぞれ余白を指定 */
     box-sizing: border-box;     /* padding分を含んで幅を100%にするため */
     position: fixed;            /* ウィンドウを基準に画面に固定 */
     top: 0;                    /* 上下の固定位置を上から0pxにする */
@@ -41,35 +42,146 @@ a {
     width: 110px;
 }
 
-.menutittle {
-    margin-left: 220px;
-    display: flex;
-    flex: none;
-    align-items: center;
+
+/*ハンバーガーアイコン*/
+.btn-burger {
+    cursor: pointer;
+    display: block;
+    width: 56px;
+    height: 60px;
+    position: absolute;
+    top: 5px;
+    right: 10px;
+}
+/*ハンバーガーアイコンを作る三本線*/
+.icon, .icon:before, .icon:after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    height: 2px; /*線の太さ*/
+    width: 35px; /*線の長さ*/
+    background-color: #444;
+    border-radius: 2px;
+    display: block;
+   content: '';
+    cursor: pointer;
+    margin: auto;
+}
+/*三本線の間隔*/
+.icon:before {
+  top: 20px;
+}
+.icon:after {
+  top: -20px;
+}
+/*チェックボックス非表示*/
+.nav-toggle {
+    display: none;
+}
+/*アイコンをクリックしたら*/
+.nav-toggle:checked ~ .btn-burger .icon {
+    background: transparent;
+}
+.nav-toggle:checked ~ .btn-burger .icon:before {
+    transform: rotate(-45deg);
+    top: 0;
+}
+.nav-toggle:checked ~ .btn-burger .icon:after {
+    transform: rotate(45deg);
+    top: 0;
+}
+.icon,
+.icon:before,
+.icon:after {
+    transition: all .8s;
+}
+/*表示されるメニューの中身*/
+.nav {
+    background-color: white;
+    opacity:0.8;
+    
+}
+.nav-list a {
+    display: block;
+    text-decoration: none;
+    color: rgb(2, 2, 2);
     font-family: 游明朝;
-
 }
-.menutittle .tittle {
-    color: #000;
-    font-weight: bold;
-    text-decoration: none;
-    margin-left: 60px;
+.nav-list {
+    list-style: none;
+    display: none;
+    margin: 10px 0 0;
+    padding-left: 70px;
+    padding-top: 30px;
+    background-color: #fff;
+   
+}
+.nav-list li {
+    margin: 0;
+    padding: 10px;
+}
+.nav-toggle:checked ~ .nav .nav-list {
+    display: block;
+}
+/*メインイメージ*/
+.top {
+    height: 200px;
+    margin-bottom: 50px;
+    background-color: #f0f8ff;
+}
+/* --------------------------------------------------
+  幅768px以上のスタイル指定 ここから
+-------------------------------------------------- */
+@media screen and (min-width: 768px) {
+/* ハンバーガーボタン */
+.btn-burger {
+    display: none;  /*768px以上では使用しない */
+}
+header {
+        width: 100%;       /* 幅いっぱいを指定 */
+        height: 110px;      /* 高さを50pxに指定 */
+        background: white;     /* 背景色を指定 */
+        padding: 20px 50px;         /* ヘッダーに上下左右それぞれ余白を指定 */
+        box-sizing: border-box;     /* padding分を含んで幅を100%にするため */
+        position: fixed;            /* ウィンドウを基準に画面に固定 */
+        top: 0;                    /* 上下の固定位置を上から0pxにする */
+        left: 0;                   /* 左右の固定位置を左から0pxにする */
+        display: flex;             /* 中の要素を横並びにする */
+        align-items: center;            /* 中の要素を上下中央に並べる */
+        z-index:9999;
 }
 
-.menutittle .tittle a {
-    text-decoration: none;
-    color: black;
+.nav-toggle:checked ~ .nav .nav-list {
+    display: none;
+}
+.nav {
+    height: 75px;
+    margin-left: 700px;
+    margin-top: 20px;
+}
+.nav-list {
+    display: flex;
+    justify-content: center;
+    height: 75px;
+    align-items: center;
+}
+.nav-list li:not(:last-child) {
+    border-right: 1px solid #fff;
+}
 }
 
-/*メイン***/
+
+/********************メイン************************/
 .main {
     text-align: center;
-    margin: 0 60px 0;
+    margin: 460px 60px;
 }
 
 /*画像と文字重っている個所***/
 .t .top {
-    position: relative;
+    position:relative;
 }
 
 .t .top img {
@@ -77,6 +189,7 @@ a {
     height: 500px;
     object-fit: cover;
 }
+
 
 .t .top h2 {
     font-size: 5rem;
@@ -176,6 +289,9 @@ a {
 }
 
 /*****メニュー********/
+.menu img {
+    display: none;
+}
 /***くし****/
 .menu1 {
   
@@ -478,4 +594,195 @@ form {
     width: 100%;
     height: 250px;
     object-fit: cover;
+}
+
+/**レスポンシブ対応*/
+
+@media screen and (max-width: 767px ){
+    body {
+        width: 100%;
+    }
+
+    header {
+        background-color: white;
+        height: 75px;
+    }
+
+    .hed .headerlogo img {
+        width: 73px;
+        height: auto;
+    }
+
+    .t .top img {
+        width: 100%;
+        height: auto;
+    }
+
+    .t .top h2 {
+        font-size: 3rem;
+        top: 30%;
+    }
+
+    .main {
+        margin: 150px 10px;
+    }
+
+    .acces iframe {
+        width: 100%;
+        height: auto;
+    }
+
+    .menu img {
+        display:inline;
+        width: 100%;
+        height: auto;
+        padding: 0px 25px;
+    }
+
+    .menu1 {
+        background-image: initial;
+        background-size: initial;
+        margin-left: 15%;
+        margin-right: 15%;
+    }
+
+    .menu1 .m {
+        text-align: center;
+    }
+
+    .menu1 .m .kusi {
+        border: initial;
+        display: initial;
+        padding: 10px 20px;
+        background-color: initial;
+    }
+
+
+    .menu1 .m .kusi .menubox {
+        display: block;
+        padding: initial;
+        width: 100%;
+        border: initial;
+        border-top: solid 2px #0f0f0f;
+        
+    }
+
+    
+    .menu1 .m .kusi .menubox p {
+        font-size: initial;
+        font-family: "游明朝";
+        color: black;
+        margin-top: 15px
+    }
+
+    .menu2 {
+        background-image: initial;
+        background-size: initial;
+    }
+
+    .menu2 .n {
+        text-align: center;
+    }
+
+    .menu2 .n .ippin {
+        border: initial;
+        display: initial;
+        padding: 10px 20px;
+        background-color: initial;
+    }
+
+    .menu2 .n .ippin .menubox {
+        display: block;
+        padding: initial;
+        width: 100%;
+        border: initial;
+        border-top: solid 2px #0f0f0f;
+    }
+
+    .menu2 .n .ippin .menubox p {
+        font-size: initial;
+        font-family: "游明朝";
+        color: black;
+        margin-top: 15px
+    }
+
+    .menu3 {
+        background-image: initial;
+        background-size: initial;
+    }
+
+    .menu3 .d {
+        text-align: center;
+    }
+
+    .menu3 .d .drink {
+        border: initial;
+        display: initial;
+        padding: 10px 20px;
+        background-color: initial;
+    }
+
+    .menu3 .d .drink .menubox {
+        display: block;
+        padding: initial;
+        width: 100%;
+        border: initial;
+        border-top: solid 2px #0f0f0f;
+    }
+
+    .menu3 .d .drink .menubox p {
+        font-size: initial;
+        font-family: "游明朝";
+        color: black;
+        margin-top: 15px
+    }
+
+    .news .osirase ul {
+       display: block;
+       width: 100%;
+    }
+
+    .shop .shopbox {
+        display: block;
+        width: 100%;
+    }
+
+    .shop .shopbox .goro {
+        margin: 0 15px;
+    }
+
+    .shop .shopbox .mutu {
+        margin: 80px 15px;
+        border-top: solid 2px #0f0f0f;
+    }
+
+    .shop .shopbox .mutu h4 {
+        padding-top: 20px;
+    }
+
+    .shop .shopbox .nana {
+        margin: 80px 15px;
+        border-top: solid 2px #0f0f0f;
+    }
+    
+    .shop .shopbox .nana h4 {
+        padding-top: 20px;
+    }
+
+    form {
+        width: 100%;
+    }
+
+    .calendar-container {
+        width: 100%;
+    }
+
+    .calendar {
+        width: 100%;
+    }
+
+    .foot .campany {
+        font-size: 2rem;
+    }
+    
 }
